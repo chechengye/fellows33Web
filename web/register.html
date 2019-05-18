@@ -26,17 +26,35 @@
             }
         }
 
+        function checkUser2() {
+
+        }
+
+        function userNameFocus() {
+            document.getElementById("userSpan").innerHTML = "<font color='gray'>请填写用户名</font>"
+        }
+
+        function userNameBlur() {
+            var userStr = document.getElementById("username").value;
+            if(userStr == ""){
+                document.getElementById("userSpan").innerHTML = "<font color='red'>用户名不能为空</font>"
+            }else{
+                document.getElementById("userSpan").innerHTML = "";
+            }
+        }
     </script>
 </head>
 <body>
-    <form action="#" method="get">
+    <form action="#" method="get" onsubmit="checkUser2()">
         <table width="600px" height="500px" align="center" border="1px" cellpadding="0px" cellspacing="0px">
             <tr height="50px">
                 <td colspan="2"><font size="3">会员注册</font>&nbsp;&nbsp;&nbsp;USER REGISTER</td>
             </tr>
             <tr height="50px">
                 <td>用户名</td>
-                <td><input type="text" placeholder="请输入用户名" maxlength="16" size="30px" name="username" style="height: 40px" id="username"/></td>
+                <td><input type="text" placeholder="请输入用户名" maxlength="16" size="30px" name="username" style="height: 40px" id="username" onfocus="userNameFocus()" onblur="userNameBlur()"/>
+                <span id="userSpan"></span>
+                </td>
             </tr>
             <tr height="50px">
                 <td>密码</td>
@@ -66,7 +84,7 @@
                 <td><input type="text" placeholder="请输入验证码" name="code" size="30px" style="height: 40px"/><img src="img/yanzhengma.png"/></td>
             </tr>
             <tr height="50px">
-                <td colspan="2"><input type="submit" value="提交" onclick="checkUser()"/></td>
+                <td colspan="2"><input type="submit" value="提交" /></td>
             </tr>
         </table>
     </form>

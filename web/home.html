@@ -3,6 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>商城首页</title>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script>
+      /*  var interval ;
+        function init() {
+            interval = setInterval("changeImg()" , 3000);
+        }
+        var i = 1;
+        function changeImg() {
+            i++;
+            document.getElementById("banner_img").src = "img/" + i + ".jpg";
+            if (i == 3) {
+                i = 0;
+                clearInterval(interval);
+            }
+        }
+*/
+      var time;
+      $(function () {
+          time = setInterval("showAd()" , 3000);
+      });
+      function showAd() {
+          $("#img").slideDown(1000);
+          clearInterval(time);
+          setInterval("hideAd()" , 3000);
+      }
+      function hideAd() {
+          $("#img").slideUp(1000);
+      }
+    </script>
     <style>
         div#content{
             width: 1119px;
@@ -55,7 +84,8 @@
 
     </style>
 </head>
-<body>
+<body onload="init()">
+    <img src="img/ad_show.jpg" id="img" style="display: none;"/>
     <div id="content">
 
         <div id="head">
@@ -81,7 +111,7 @@
             </ul>
         </div>
         <div id="banner">
-            <img src="img/1.jpg" width="100%"/>
+            <img src="img/1.jpg" id="banner_img" width="100%"/>
         </div>
 
         <div id="goodsTips">
