@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <title>第一个web页面</title>
     <!-- 放置CSS，JS，引用包信息等-->
+    <style>
+        div{
+            border: 1px dashed black;
+            width: 100px;
+        }
+        .div1{
+
+        }
+        #div_id{
+            background: red;
+            margin: 3px;
+            width: 100px;
+            display: inline-block;
+        }
+        #div_id1{
+            background: blue;
+            margin: 3px;
+            width: 100px;
+            display: inline-block;
+        }
+        #div_id2{
+            background: greenyellow;
+            margin: 3px;
+            width: 100px;
+        }
+    </style>
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
 <!-- 体 ， 放置界面元素，标签， jsp代码-->
@@ -55,7 +82,7 @@
         <input type="reset" value="重置"/>
     </form>-->
 
-    <ol start="30">
+    <!--<ol start="30">
         <li>苹果</li>
         <li>菠萝</li>
         <li>香蕉</li>
@@ -70,12 +97,17 @@
     <a href="http://www.baidu.com" target="_blank">点击</a>
 
     <select name="province">
-        <option>--请选择--</option>
+        <option>&#45;&#45;请选择&#45;&#45;</option>
         <option>北京</option>
         <option>上海</option>
         <option>天津</option>
     </select>
-<textarea name="text"></textarea>
+<textarea name="text"></textarea>-->
 
+<div id="div_id" class="div1" style="height: 100px ;"></div>
+
+<div id="div_id1" class="div1" style="height: 100px ;"></div>
+
+<div id="div_id2" class="div1" style="height: 100px ;"></div>
 </body>
 </html>
