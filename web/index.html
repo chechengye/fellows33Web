@@ -4,6 +4,37 @@
     <meta charset="UTF-8">
     <title>第一个web页面</title>
     <!-- 放置CSS，JS，引用包信息等-->
+<!--    <script src="js/test.js" rel="script" type="text/javascript"></script>-->
+    <script>
+        var str = "10";
+        var b = true;
+        var i = 10;
+        var interval;
+        window.onload = function () {
+            /*if(str === i){
+                alert("相等")
+            }else{
+                alert("不相等")
+            }*/
+            //alert(document.getElementById("span").innerText);
+            document.getElementById("span").innerHTML = document.getElementById("span").innerText + "测试innerHTML";
+            //document.write("测试写入.....");
+            /*var b = confirm("确定要删除吗?");
+            if(b){
+                alert("确定")
+            }else{
+                alert("取消")
+            }*/
+
+            //interval = setInterval("test()" , 2000);
+            setTimeout("test()" ,3000 );
+        }
+        var i = 0;
+        function test() {
+            location.href = "http://www.baidu.com"
+        }
+
+    </script>
     <style>
         div{
             border: 1px dashed black;
@@ -33,6 +64,8 @@
     <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
+<p id="span"> 测试数据</p>
+<span id="span1" ></span>
 <!-- 体 ， 放置界面元素，标签， jsp代码-->
    <!-- <font size="33px" color="red">测试程序</font>
     <h1>测试程序</h1>
@@ -74,7 +107,7 @@
    <!-- <form action="#" method="post">
 
         用户名: <input type="text" name="username"/><br/>
-        密码: <input type="password" name="password"/><br/>
+        密码:
         性别: <input type="radio" name="sex"/>男<input type="radio" name="sex"/>女<br/>
         爱好: <input type="checkbox" name="joy"/> 篮球 <input type="checkbox" name="joy"/>足球 <input type="checkbox" name="joy"/>乒乓球<br/>
         选择文件: <input type="file"/><br/>
@@ -109,5 +142,12 @@
 <div id="div_id1" class="div1" style="height: 100px ;"></div>
 
 <div id="div_id2" class="div1" style="height: 100px ;"></div>
+
+<input id="input" type="password" name="password" value="dshjds"/><br/>
+
+
+<input type="button"  value="返回上一个页面" onclick="javascript:history.back()"/>
+<a onclick="javascript:history.forward()" href="">返回</a>
+
 </body>
 </html>
