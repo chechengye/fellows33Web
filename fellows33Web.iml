@@ -31,5 +31,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="c3p0-0.9.1.2" level="project" />
+    <orderEntry type="library" name="commons-dbcp-1.4" level="project" />
+    <orderEntry type="library" name="commons-dbutils-1.4" level="project" />
   </component>
 </module>

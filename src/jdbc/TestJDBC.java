@@ -1,12 +1,19 @@
 package jdbc;
 
+import domain.User;
 import jdbc.utils.JDBCUtils;
 import jdk.nashorn.internal.scripts.JD;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 import org.junit.Test;
 import pool.C3P0Utils;
+import pool.DBCPUtils;
 import pool.MyConnectionPool;
 
 import java.sql.*;
+import java.util.List;
 
 public class TestJDBC {
 
@@ -15,6 +22,51 @@ public class TestJDBC {
         login("lisi" , "123");
     }
 
+    /**
+     * 查询操作for QueryRunner
+     */
+    @Test
+    public void testQueryRunner(){
+
+        try {
+            QueryRunner qr = new QueryRunner(C3P0Utils.getDataSource());
+            /*String sql = "select * from t_user";
+            List<User> userList = qr.query(sql, new BeanListHandler<User>(User.class));
+            userList.forEach(u-> System.out.println(u));*/
+            //String sql = "select * from t_user where id = 1";
+            String sql = "select count(*) from t_user";
+            Object o = qr.query(sql, new ScalarHandler());
+            System.out.println(o);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+    /**
+     * 删除用户
+     */
+    @Test
+    public void deleteUser(){
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try {
+            conn = DBCPUtils.getConnection();
+            String sql = "delete from t_user where id = 3";
+            pstmt = conn.prepareStatement(sql);
+            int rows = pstmt.executeUpdate();
+            if(rows > 0){
+                System.out.println("删除成功！");
+            }else{
+                System.out.println("删除失败！");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * 更新用户
+     */
     @Test
     public void updateUser(){
         Connection conn = null;
