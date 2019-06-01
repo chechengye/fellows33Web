@@ -7,6 +7,11 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>QuickStartServlet</servlet-name>
         <servlet-class>servlet.QuickStartServlet</servlet-class>
@@ -48,5 +53,28 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ServletContext1</servlet-name>
+        <servlet-class>servlet.servletContext.ServletContext1</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletContext1</servlet-name>
+        <url-pattern>/servletContext1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletContext2</servlet-name>
+        <servlet-class>servlet.servletContext.ServletContext2</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletContext2</servlet-name>
+        <url-pattern>/servletContext2</url-pattern>
     </servlet-mapping>
 </web-app>
