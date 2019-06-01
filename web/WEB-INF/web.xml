@@ -77,4 +77,15 @@
         <servlet-name>ServletContext2</servlet-name>
         <url-pattern>/servletContext2</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResponseServlet</servlet-name>
+        <servlet-class>servlet.response.ResponseServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseServlet</servlet-name>
+        <url-pattern>/responseServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
