@@ -88,4 +88,27 @@
         <servlet-name>ResponseServlet</servlet-name>
         <url-pattern>/responseServlet</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>RequestServlet1</servlet-name>
+        <servlet-class>servlet.request.RequestServlet1</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestServlet1</servlet-name>
+        <url-pattern>/requestServlet1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>servlet.request.RegisterServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/registerServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

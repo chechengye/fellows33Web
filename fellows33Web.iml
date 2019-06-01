@@ -35,5 +35,6 @@
     <orderEntry type="library" name="commons-dbcp-1.4" level="project" />
     <orderEntry type="library" name="commons-dbutils-1.4" level="project" />
     <orderEntry type="library" name="dom4j-1.6.1" level="project" />
+    <orderEntry type="library" name="commons-beanutils-1.9.3" level="project" />
   </component>
 </module>
