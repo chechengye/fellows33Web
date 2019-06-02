@@ -101,6 +101,18 @@
         <url-pattern>/requestServlet1</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>RequestServlet</servlet-name>
+        <servlet-class>servlet.request.RequestServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestServlet</servlet-name>
+        <url-pattern>/requestServlet</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>servlet.request.RegisterServlet</servlet-class>

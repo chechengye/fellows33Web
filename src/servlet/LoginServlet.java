@@ -20,10 +20,10 @@ public class LoginServlet extends HttpServlet{
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        login(username , password ,resp);
+        login(username , password ,req , resp);
     }
 
-    public void login(String username , String password ,HttpServletResponse resp){
+    public void login(String username , String password ,HttpServletRequest req,HttpServletResponse resp){
 
 
         try {
@@ -31,15 +31,23 @@ public class LoginServlet extends HttpServlet{
             String sql = "select * from t_user where uname = ? and upassword = ?";
             User user = qr.query(sql, new BeanHandler<>(User.class), username , password);
             resp.setContentType("text/html;charset=utf-8");
+            System.out.println("user = " +user);
             if(user != null){
-                resp.getWriter().write("login success！");
+                //重定向
+                resp.sendRedirect(req.getContextPath() + "/index.html");
             }else{
-                resp.getWriter().write("登陆失败！");
+                //resp.getWriter().write("登陆失败！");
+                //请求转发
+                req.setCharacterEncoding("utf-8");
+                req.setAttribute("info" , "用户名或密码错误!");
+                req.getRequestDispatcher(req.getContextPath() + "/login.jsp").forward(req , resp);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ServletException e) {
             e.printStackTrace();
         }
     }

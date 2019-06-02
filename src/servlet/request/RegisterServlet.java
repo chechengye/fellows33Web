@@ -29,6 +29,8 @@ public class RegisterServlet extends HttpServlet{
         register(user);
         System.out.println("user = " + user);*/
 
+        /*Object name = req.getAttribute("name");
+        System.out.println(name);*/
 
         try {
             String hobby = "";
@@ -46,7 +48,7 @@ public class RegisterServlet extends HttpServlet{
             System.out.println("hobby");
             //user.setId(UUID.randomUUID());
             user.setHobby(hobby);
-            register(user);
+            register(user , req , resp);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
@@ -55,7 +57,7 @@ public class RegisterServlet extends HttpServlet{
 
     }
 
-    public void register(User user){
+    public void register(User user , HttpServletRequest req , HttpServletResponse resp){
 
         try {
             //创建QueyRunner对象
@@ -63,8 +65,14 @@ public class RegisterServlet extends HttpServlet{
             System.out.println("qr = " + qr);
             //添加用户
             String sql = "insert into t_user values (null , ?, ? ,?, ?, ? ,?)";
-            qr.update(sql , user.getUname() , user.getUpassword() , user.getEmail() , user.getHobby() , user.getSex() ,user.getCode());
+            int rows = qr.update(sql, user.getUname(), user.getUpassword(), user.getEmail(), user.getHobby(), user.getSex(), user.getCode());
+            if(rows > 0){
+                //重定向
+                resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            }
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
