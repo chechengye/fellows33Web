@@ -158,15 +158,35 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>SessionServlet1</servlet-name>
-        <servlet-class>servlet.session.SessionServlet1</servlet-class>
+    <servlet-name>SessionServlet1</servlet-name>
+    <servlet-class>servlet.session.SessionServlet1</servlet-class>
 
 
-    </servlet>
+</servlet>
     <servlet-mapping>
         <servlet-name>SessionServlet1</servlet-name>
         <url-pattern>/sessionServlet1</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ServletTestJsp</servlet-name>
+        <servlet-class>servlet.jsptest.ServletTestJsp</servlet-class>
 
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletTestJsp</servlet-name>
+        <url-pattern>/servletTestJsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>servlet.jsptest.ProductServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/productServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
