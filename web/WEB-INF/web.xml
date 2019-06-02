@@ -123,4 +123,50 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/registerServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CookieServlet1</servlet-name>
+        <servlet-class>servlet.cookie.CookieServlet1</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieServlet1</servlet-name>
+        <url-pattern>/cookieServlet1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LastAccessServlet</servlet-name>
+        <servlet-class>servlet.cookie.LastAccessServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LastAccessServlet</servlet-name>
+        <url-pattern>/lastAccessServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionServlet</servlet-name>
+        <servlet-class>servlet.session.SessionServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionServlet</servlet-name>
+        <url-pattern>/sessionServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SessionServlet1</servlet-name>
+        <servlet-class>servlet.session.SessionServlet1</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionServlet1</servlet-name>
+        <url-pattern>/sessionServlet1</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
