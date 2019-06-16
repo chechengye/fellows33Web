@@ -183,10 +183,31 @@
         <servlet-name>ProductServlet</servlet-name>
         <servlet-class>servlet.jsptest.ProductServlet</servlet-class>
 
-
     </servlet>
     <servlet-mapping>
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/productServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProductInfoServlet</servlet-name>
+        <servlet-class>web.ProductInfoServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductInfoServlet</servlet-name>
+        <url-pattern>/productInfo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminProductListServlet</servlet-name>
+        <servlet-class>web.AdminProductListServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminProductListServlet</servlet-name>
+        <url-pattern>/adminProductList</url-pattern>
     </servlet-mapping>
 </web-app>

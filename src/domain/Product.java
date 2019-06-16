@@ -21,6 +21,9 @@ public class Product implements Serializable{
     private String market_price;
     private String shop_price;
     private String pimage;
+    private String pdesc;
+    private int is_hot;
+
 
     public String getPid() {
         return pid;
@@ -60,6 +63,22 @@ public class Product implements Serializable{
 
     public void setPimage(String pimage) {
         this.pimage = pimage;
+    }
+
+    public String getPdesc() {
+        return pdesc;
+    }
+
+    public void setPdesc(String pdesc) {
+        this.pdesc = pdesc;
+    }
+
+    public int getIs_hot() {
+        return is_hot;
+    }
+
+    public void setIs_hot(int is_hot) {
+        this.is_hot = is_hot;
     }
 
     @Override

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List" %>
 <%@ page import="domain.Product" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -41,7 +42,20 @@ body {
 			</ol>
 		</div>
 
-		<%
+		<c:forEach items="${productList}" var="product" varStatus="vs">
+			<div class="col-md-2" style="height:270px;">
+				<a href="product_info.htm"> <img src="${product.pimage}"
+												 width="170" height="170" style="display: inline-block;">
+				</a>
+				<p>
+					<a href=${pageContext.request.contextPath}"/productInfo?pid=${product.pid}"  style='color: green'>${product.pname}</a>
+				</p>
+				<p>
+					<font color="#FF0000">商城价：&yen;${product.shop_price}</font>
+				</p>
+			</div>
+		</c:forEach>
+		<%--<%
 			List<Product> productList = (List<Product>)request.getAttribute("productList");
 			for(Product p : productList){
 			    out.write("<div class=\"col-md-2\" style='height:270px;'>");
@@ -57,7 +71,7 @@ body {
 				out.write("</div>");
 			}
 
-		%>
+		%>--%>
 
 	</div>
 
