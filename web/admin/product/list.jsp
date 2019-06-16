@@ -10,8 +10,15 @@
 	src="${pageContext.request.contextPath}/js/public.js"></script>
 <script type="text/javascript">
 			function addProduct(){
-				window.location.href = "${pageContext.request.contextPath}/admin/product/add.jsp";
+				window.location.href = "${pageContext.request.contextPath}/adminCategoryList";
 			}
+
+			function deleteProduct(pid) {
+				var b = confirm("您确定要删除该商品吗?");
+				if(b){
+                    window.location.href = "${pageContext.request.contextPath}/adminDeleteProduct?pid=" + pid;
+				}
+            }
 		</script>
 </HEAD>
 <body>
@@ -74,7 +81,7 @@
 											border="0" style="CURSOR: hand">
 									</a></td>
 
-									<td align="center" style="HEIGHT: 22px"><a href="#"> <img
+									<td align="center" style="HEIGHT: 22px"><a href="#" onclick="deleteProduct('${product.pid}');"> <img
 											src="${pageContext.request.contextPath}/images/i_del.gif"
 											width="16" height="16" border="0" style="CURSOR: hand">
 									</a></td>

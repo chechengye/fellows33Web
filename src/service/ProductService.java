@@ -1,6 +1,7 @@
 package service;
 
 import dao.ProductDao;
+import domain.Category;
 import domain.Product;
 
 import java.sql.SQLException;
@@ -18,5 +19,17 @@ public class ProductService {
 
     public List<Product> getAllProduct() throws SQLException {
         return productDao.getAllProduct();
+    }
+
+    public List<Category> getAllCategory() throws SQLException {
+        return productDao.getAllCategory();
+    }
+
+    public void addProduct(Product product) throws SQLException {
+        productDao.addProduct(product);
+    }
+
+    public void deleteProductByPid(String pid) throws SQLException {
+        productDao.deleteProductByPid(pid);
     }
 }

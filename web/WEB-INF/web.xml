@@ -210,4 +210,38 @@
         <servlet-name>AdminProductListServlet</servlet-name>
         <url-pattern>/adminProductList</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>AdminProductAddServlet</servlet-name>
+        <servlet-class>web.AdminProductAddServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminProductAddServlet</servlet-name>
+        <url-pattern>/adminProductAdd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminCategoryListServlet</servlet-name>
+        <servlet-class>web.AdminCategoryListServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminCategoryListServlet</servlet-name>
+        <url-pattern>/adminCategoryList</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminDeleteProductServlet</servlet-name>
+        <servlet-class>web.AdminDeleteProductServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminDeleteProductServlet</servlet-name>
+        <url-pattern>/adminDeleteProduct</url-pattern>
+    </servlet-mapping>
 </web-app>
