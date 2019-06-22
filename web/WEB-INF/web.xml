@@ -244,4 +244,28 @@
         <servlet-name>AdminDeleteProductServlet</servlet-name>
         <url-pattern>/adminDeleteProduct</url-pattern>
     </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>AjaxServlet</servlet-name>
+        <servlet-class>servlet.ajax.AjaxServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjaxServlet</servlet-name>
+        <url-pattern>/ajaxServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>JQueryAjaxServlet</servlet-name>
+        <servlet-class>servlet.ajax.JQueryAjaxServlet</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JQueryAjaxServlet</servlet-name>
+        <url-pattern>/jQueryAjax</url-pattern>
+    </servlet-mapping>
 </web-app>
